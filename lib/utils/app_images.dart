@@ -1,6 +1,10 @@
 class Assets {
   Assets._();
   
+  /// Assets for fontsMontserratRegular
+  /// assets/fonts/Montserrat-Regular.ttf
+  static const String fontsMontserratRegular = "assets/fonts/Montserrat-Regular.ttf";
+
   /// Assets for imagesCash
   /// assets/images/cash.svg
   static const String imagesCash = "assets/images/cash.svg";
@@ -32,6 +36,14 @@ class Assets {
   /// Assets for imagesMyTransaction
   /// assets/images/myTransaction.svg
   static const String imagesMyTransaction = "assets/images/myTransaction.svg";
+
+  /// Assets for imagesPlaceholder1
+  /// assets/images/placeholder1.svg
+  static const String imagesPlaceholder1 = "assets/images/placeholder1.svg";
+
+  /// Assets for imagesPlaceholder2
+  /// assets/images/placeholder2.svg
+  static const String imagesPlaceholder2 = "assets/images/placeholder2.svg";
 
   /// Assets for imagesSettings
   /// assets/images/settings.svg

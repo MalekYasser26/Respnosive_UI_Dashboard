@@ -89,7 +89,6 @@ double getResponsiveFontSize(BuildContext context ,{required double fontSize}){
   double responsiveFontSize = scaleFactor*fontSize;
   double lowerLimit = fontSize*0.8;
   double upperLimit = fontSize*1.2;
-  print("res : $responsiveFontSize  , upper : $upperLimit , lower :$lowerLimit");
   return responsiveFontSize.clamp(lowerLimit, upperLimit);
 
 
