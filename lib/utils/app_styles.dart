@@ -19,6 +19,22 @@ abstract class AppStyles {
       fontWeight: FontWeight.w700,
     );
   }
+  static TextStyle styleMedium14(BuildContext context) {
+    return TextStyle(
+      color: const Color(0xFFFFFFFF).withOpacity(0.5),
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontFamily: 'Montserrat',
+      fontWeight: FontWeight.w500,
+    );
+  }
+  static TextStyle styleMediumBlue14(BuildContext context) {
+    return TextStyle(
+      color: const Color(0xFF064061),
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontFamily: 'Montserrat',
+      fontWeight: FontWeight.w500,
+    );
+  }
   static TextStyle styleMedium16(BuildContext context) {
     return TextStyle(
       color: const Color(0xFF064061),
@@ -38,6 +54,14 @@ abstract class AppStyles {
   static TextStyle styleSemiBold16(BuildContext context) {
     return TextStyle(
       color: const Color(0xFF064061),
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontFamily: 'Montserrat',
+      fontWeight: FontWeight.w600,
+    );
+  }
+  static TextStyle styleSemiBoldWhite16(BuildContext context) {
+    return TextStyle(
+      color: const Color(0xFFFFFFFF),
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w600,
@@ -78,6 +102,14 @@ abstract class AppStyles {
   static TextStyle styleSemiBold18(BuildContext context) {
     return TextStyle(
       color: const Color(0xFFFFFFFF),
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontFamily: 'Montserrat',
+      fontWeight: FontWeight.w600,
+    );
+  }
+  static TextStyle styleSemiBoldBlue18(BuildContext context) {
+    return TextStyle(
+      color: const Color(0xFF4EB7F2),
       fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w600,

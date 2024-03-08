@@ -26,11 +26,14 @@ class CustDrawer extends StatelessWidget {
     return const CustomScrollView(
       slivers: [
          SliverToBoxAdapter(
-           child: UserInfoListTile(
-            image: Assets.imagesPlaceholder1,
-            subtitle: "zzzzz@gmail.com",
-            title: "Malek Yasser",
+           child: Padding(
+             padding: EdgeInsets.all(15.0),
+             child: UserInfoListTile(
+              image: Assets.imagesPlaceholder1,
+              subtitle: "zzzzz@gmail.com",
+              title: "Malek Yasser",
         ),
+           ),
          ),
          SliverToBoxAdapter(
            child: SizedBox(
@@ -45,7 +48,9 @@ class CustDrawer extends StatelessWidget {
            hasScrollBody: false,
            child: Column(
              children: [
-               Expanded(child: SizedBox()),
+               Expanded(child: SizedBox(
+                 height: 20,
+               )),
                InactiveDrawerItem(dim: DrawerItemModels(text: "Setting system", imageName: Assets.imagesSettings)),
                SizedBox(
                  height: 20,
