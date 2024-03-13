@@ -27,7 +27,11 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
             flex: 2,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 30),
-              child: AllExpenses(),
+              child: Column(
+                children: [
+                  AllExpenses(),
+                ],
+              ),
             ),
           ),
           const Expanded(

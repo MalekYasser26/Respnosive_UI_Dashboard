@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ExpensesItemHeader extends StatelessWidget {
-  final String image ;
-  final bool active ;
-  const ExpensesItemHeader({
-    super.key, required this.image,required this.active
-  });
+  final String image;
+
+  final bool active;
+
+  const ExpensesItemHeader(
+      {super.key, required this.image, required this.active});
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -21,9 +23,9 @@ class ExpensesItemHeader extends StatelessWidget {
         const Spacer(),
         IconButton(
             onPressed: () {},
-            icon: const Icon(
+            icon:  Icon(
               Icons.arrow_forward_ios,
-              color: Colors.white,
+              color: active ? Colors.white : const Color(0xFF064061),
               size: 18,
             ))
       ],

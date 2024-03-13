@@ -1,10 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:full_responsive_ui/features/home/presentation/models/expenses_item_model.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/all_expenses_header.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/expenses_item.dart';
 import 'package:full_responsive_ui/utils/app_images.dart';
 
-class AllExpenses extends StatelessWidget {
+class AllExpenses extends StatefulWidget {
   const AllExpenses({Key? key}) : super(key: key);
+
+  @override
+  _AllExpensesState createState() => _AllExpensesState();
+}
+
+class _AllExpensesState extends State<AllExpenses> {
+  int selectedIndex = 0;
+
+  void updateIndex(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
+
+  static const List<ExpensesItemModels> eimItems = [
+    ExpensesItemModels(
+        type: "Balance",
+        date: "March 2024",
+        image: Assets.imagesCash,
+        money: "26800"),
+    ExpensesItemModels(
+        type: "Income",
+        date: "March 2024",
+        image: Assets.imagesExpenses,
+        money: "26800"),
+    ExpensesItemModels(
+        type: "Expenses",
+        date: "March 2024",
+        image: Assets.imagesExpenses,
+        money: "26800"),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -13,41 +45,24 @@ class AllExpenses extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15), color: Colors.white),
-        child:  Padding(
-          padding: EdgeInsets.all(8.0),
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
           child: Column(
             children: [
-              AllExpensesHeader(),
+              const AllExpensesHeader(),
               Row(
-                children: [
-                  Expanded(
+                children: eimItems.asMap().entries.map((e) {
+                  int index = e.key;
+                  var item = e.value;
+                  return Expanded(
                     child: ExpensesItem(
-                      type: "Balance",
-                      date: "March 2024",
-                      money: "26800",
-                      active: false,
-                      image: Assets.imagesCash,
+                      eimModel: item,
+                      active: selectedIndex == index,
+                      index: index,
+                      updateIndex: updateIndex,
                     ),
-                  ),
-                  Expanded(
-                    child: ExpensesItem(
-                      type: "Income",
-                      date: "March 2024",
-                      money: "26800",
-                      active: false,
-                      image: Assets.imagesExpenses,
-                    ),
-                  ),
-                  Expanded(
-                    child: ExpensesItem(
-                      type: "Expenses",
-                      date: "March 2024",
-                      money: "26800",
-                      active: true,
-                      image: Assets.imagesExpenses,
-                    ),
-                  ),
-                ],
+                  );
+                }).toList(),
               ),
             ],
           ),

@@ -1,38 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:full_responsive_ui/features/home/presentation/models/expenses_item_model.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/active_expenses_item.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/inactive_expenses_item.dart';
 
-class ExpensesItem extends StatefulWidget {
-  final String type, date, money,image;
-  bool active = false;
+class ExpensesItem extends StatelessWidget {
+  final ExpensesItemModels eimModel;
+  final bool active;
+  final int index;
+  final Function(int) updateIndex;
 
   ExpensesItem({
-    super.key,
-    required this.type,
-    required this.date,
-    required this.money,
+    Key? key,
+    required this.eimModel,
     required this.active,
-    required this.image
-  });
+    required this.index,
+    required this.updateIndex,
+  }) : super(key: key);
 
-  @override
-  State<ExpensesItem> createState() => _ExpensesItemState();
-}
-
-class _ExpensesItemState extends State<ExpensesItem> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        widget.active = !widget.active;
-        print(widget.active);
-        setState(() {
-        });
-
+        updateIndex(index);
       },
-      child: widget.active == false
-          ? InactiveExpensesItem(type: widget.type, date: widget.date, money: widget.money, image: widget.image,active: widget.active,)
-          : ActiveExpensesItem(type: widget.type, date: widget.date, money: widget.money,image: widget.image,active: widget.active,)
+      child: active
+          ? ActiveExpensesItem(active: true, eimModel: eimModel)
+          : InactiveExpensesItem(active: false, eimModel: eimModel),
     );
   }
 }
