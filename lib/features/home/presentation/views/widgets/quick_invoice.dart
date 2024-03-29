@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:full_responsive_ui/features/home/presentation/models/user_info_model.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_bg_container.dart';
+import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_text.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/latest_transaction.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/quick_invoice_header.dart';
 import 'package:full_responsive_ui/utils/app_images.dart';
@@ -25,64 +26,33 @@ class QuickInvoice extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustBGContainter(
+    return const CustBGContainter(
         childWidget: Column(
       children: [
-        const QuickInvoiceHeader(),
-        const LatestTransaction(userInfoModel: userInfoModel),
-        const Divider(
+         QuickInvoiceHeader(),
+         LatestTransaction(userInfoModel: userInfoModel),
+         Divider(
           height: 48,
         ),
         Row(
           children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Customer name",
-                    style: AppStyles.styleSemiBold16(context),
-                  ),
-                 const IntrinsicWidth(
-                    child:  TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                        hintText: "Type Customer name",
+             CustText(text: "Customer Name"),
+             SizedBox(width: 20,),
+             CustText(text: "Customer Email"),
 
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Customer Email",
-                    style: AppStyles.styleSemiBold16(context),
-                  ),
-                 Container(
-                   width: 200,
-                   child: const TextField(
-                     decoration: InputDecoration(
-                       border: OutlineInputBorder(
-                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                       ),
-                       hintText: "Type Customer Email",
+          ],
+        ),
+         SizedBox(height: 15,),
+        Row(
+          children: [
+             CustText(text: "Item Name"),
+             SizedBox(width: 20,),
+             CustText(text: "Item Name"),
 
-                     ),
-                   ),
-                 ),
-                ],
-              ),
-            ),
           ],
         ),
       ],
     ));
   }
 }
+

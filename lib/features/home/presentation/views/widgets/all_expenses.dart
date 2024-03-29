@@ -49,7 +49,7 @@ class _AllExpensesState extends State<AllExpenses> {
             children: eimItems.asMap().entries.map((e) {
               int index = e.key;
               var item = e.value;
-              return Expanded(
+              return Flexible(
                 child: ExpensesItem(
                   eimModel: item,
                   active: selectedIndex == index,
