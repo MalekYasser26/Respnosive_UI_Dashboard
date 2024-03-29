@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:full_responsive_ui/features/home/presentation/models/expenses_item_model.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/all_expenses_header.dart';
+import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_bg_container.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/expenses_item.dart';
 import 'package:full_responsive_ui/utils/app_images.dart';
 
@@ -40,33 +41,25 @@ class _AllExpensesState extends State<AllExpenses> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15), color: Colors.white),
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Column(
-            children: [
-              const AllExpensesHeader(),
-              Row(
-                children: eimItems.asMap().entries.map((e) {
-                  int index = e.key;
-                  var item = e.value;
-                  return Expanded(
-                    child: ExpensesItem(
-                      eimModel: item,
-                      active: selectedIndex == index,
-                      index: index,
-                      updateIndex: updateIndex,
-                    ),
-                  );
-                }).toList(),
-              ),
-            ],
+    return CustBGContainter(
+      childWidget: Column(
+        children: [
+          const AllExpensesHeader(),
+          Row(
+            children: eimItems.asMap().entries.map((e) {
+              int index = e.key;
+              var item = e.value;
+              return Expanded(
+                child: ExpensesItem(
+                  eimModel: item,
+                  active: selectedIndex == index,
+                  index: index,
+                  updateIndex: updateIndex,
+                ),
+              );
+            }).toList(),
           ),
-        ),
+        ],
       ),
     );
   }

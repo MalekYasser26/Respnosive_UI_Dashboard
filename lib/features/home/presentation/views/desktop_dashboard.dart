@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/all_expenses.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_drawer.dart';
+import 'package:full_responsive_ui/features/home/presentation/views/widgets/quick_invoice.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/user_info_list_tile.dart';
 import 'package:full_responsive_ui/utils/app_images.dart';
 
@@ -30,6 +31,7 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
               child: Column(
                 children: [
                   AllExpenses(),
+                  QuickInvoice(),
                 ],
               ),
             ),
