@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:full_responsive_ui/features/home/presentation/models/user_info_model.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_bg_container.dart';
+import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_button.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_text.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/latest_transaction.dart';
+import 'package:full_responsive_ui/features/home/presentation/views/widgets/quick_invoice_form.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/quick_invoice_header.dart';
 import 'package:full_responsive_ui/utils/app_images.dart';
 import 'package:full_responsive_ui/utils/app_styles.dart';
@@ -32,25 +34,9 @@ class QuickInvoice extends StatelessWidget {
          QuickInvoiceHeader(),
          LatestTransaction(userInfoModel: userInfoModel),
          Divider(
-          height: 48,
+          height: 10,
         ),
-        Row(
-          children: [
-             CustText(text: "Customer Name"),
-             SizedBox(width: 20,),
-             CustText(text: "Customer Email"),
-
-          ],
-        ),
-         SizedBox(height: 15,),
-        Row(
-          children: [
-             CustText(text: "Item Name"),
-             SizedBox(width: 20,),
-             CustText(text: "Item Name"),
-
-          ],
-        ),
+        QuickInvoiceForm(),
       ],
     ));
   }
