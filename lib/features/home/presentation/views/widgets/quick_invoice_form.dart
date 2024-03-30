@@ -28,7 +28,7 @@ class QuickInvoiceForm extends StatelessWidget {
             SizedBox(
               width: 20,
             ),
-            CustText(text: "Item Name"),
+            CustText(text: "Amount"),
           ],
         ),
         const SizedBox(

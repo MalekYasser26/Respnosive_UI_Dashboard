@@ -21,7 +21,7 @@ class LatestTransaction extends StatelessWidget {
         ),
         Text("Latest transaction", style: AppStyles.styleRegular16(context)),
         SizedBox(
-          height: 90,
+          height: 80,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: 3,
