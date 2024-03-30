@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/all_expenses.dart';
+import 'package:full_responsive_ui/features/home/presentation/views/widgets/credit_card.dart';
+import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_bg_container.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_drawer.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/quick_invoice.dart';
-import 'package:full_responsive_ui/features/home/presentation/views/widgets/user_info_list_tile.dart';
-import 'package:full_responsive_ui/utils/app_images.dart';
+
 
 class DesktopDashboardView extends StatefulWidget {
   const DesktopDashboardView({Key? key}) : super(key: key);
@@ -39,13 +40,17 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
             ),
           ),
           const Expanded(
-              child: UserInfoListTile(
-            image: Assets.imagesPlaceholder2,
-            subtitle: "zzzzz@gmail.com",
-            title: "Malek Yasser",
-          )),
+              child: CustBGContainter(
+            childWidget: Column(
+              children: [
+                CreditCard(),
+              ],
+            ),
+          ),
+          ),
         ],
       ),
     );
   }
 }
+
