@@ -57,8 +57,8 @@ class Assets {
   /// assets/images/walletAccounts.svg
   static const String imagesWalletAccounts = "assets/images/walletAccounts.svg";
 
-
   static const String imagePlaceHolder = "assets/images/imagePlaceHolder.svg";
+  static const String imageMaskGroup = "assets/images/maskGroup.png";
 
 }
 

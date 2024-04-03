@@ -21,12 +21,13 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
       body: Row(
         children: [
           Expanded(
+            flex: 556,
               child: Container(
             color: Colors.white,
             child: const CustDrawer(),
           )),
           const Expanded(
-            flex: 2,
+            flex: 1300,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 30),
               child: SingleChildScrollView(
@@ -40,6 +41,7 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
             ),
           ),
           const Expanded(
+            flex: 800,
               child: CustBGContainter(
             childWidget: Column(
               children: [
