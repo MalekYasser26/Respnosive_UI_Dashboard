@@ -34,22 +34,27 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
                 child: Column(
                   children: [
                     AllExpenses(),
+                    SizedBox(height: 10,),
                     QuickInvoice(),
                   ],
                 ),
               ),
             ),
           ),
-          const Expanded(
-            flex: 800,
+           const Expanded(
+            flex: 900,
               child: CustBGContainter(
-            childWidget: Column(
-              children: [
-                CreditCard(),
-              ],
+                childWidget: SingleChildScrollView(
+                  child: Column(
+                  children: [
+                     CreditCard(),
+
+                  ],
             ),
+                ),
+              ),
           ),
-          ),
+         
         ],
       ),
     );

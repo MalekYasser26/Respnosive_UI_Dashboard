@@ -27,7 +27,7 @@ class InactiveDrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title:Text(dim.text,style: AppStyles.styleMedium16(context)),
+      title:Text(dim.text,style: AppStyles.styleMedium16(context),overflow: TextOverflow.ellipsis,softWrap: false),
       leading:SvgPicture.asset(dim.imageName),
 
     );
@@ -44,7 +44,7 @@ class ActiveDrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title:Text(dim.text,style: AppStyles.styleBold16(context)),
+      title:Text(dim.text,style: AppStyles.styleMedium16(context),overflow: TextOverflow.ellipsis,softWrap: false),
       leading:SvgPicture.asset(dim.imageName),
       trailing: Container(
         color: const Color(0xFF4EB7F2),

@@ -16,7 +16,7 @@ class CreditCard extends StatelessWidget {
         Text("My Card",style: AppStyles.styleSemiBold16(context),),
         const SizedBox(height: 5,),
         AspectRatio(
-          aspectRatio: 1.8,
+          aspectRatio: 1.9,
           child: Container(
             decoration: BoxDecoration(
               color: const Color(0xFF4EB7F2),
@@ -26,22 +26,12 @@ class CreditCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 10.0,left: 17,bottom: 5),
-                  child: Text("Name Card",style: AppStyles.styleMedium14(context),),
+                ListTile(
+                  title: Text("Name Card",style: AppStyles.styleMedium14(context)),
+                  subtitle: Text("Malek Yasser",style: AppStyles.styleSemiBoldWhite16(context)),
+                  trailing: SvgPicture.asset(Assets.imagePlaceHolder),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 17.0),
-                  child: Row(
-                    children: [
-                      Text("Malek Yasser",style: AppStyles.styleSemiBoldWhite16(context),),
-                      const Spacer(),
-                      SvgPicture.asset(Assets.imagePlaceHolder,),
-                    ],
-                  ),
-                ),
-                const Spacer(
-                ),
+                 const Spacer(),
                  Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -57,8 +47,7 @@ class CreditCard extends StatelessWidget {
                       ),
                     )
                   ],
-                )
-
+                ),
               ],
             ) ,
           ),
