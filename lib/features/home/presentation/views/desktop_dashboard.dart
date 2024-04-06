@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/all_expenses.dart';
-import 'package:full_responsive_ui/features/home/presentation/views/widgets/credit_card.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_bg_container.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_drawer.dart';
+import 'package:full_responsive_ui/features/home/presentation/views/widgets/my_cards.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/quick_invoice.dart';
 
 
@@ -46,9 +46,9 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
               child: CustBGContainter(
                 childWidget: SingleChildScrollView(
                   child: Column(
-                  children: [
-                     CreditCard(),
 
+                  children: [
+                      MyCards(),
                   ],
             ),
                 ),

@@ -4,8 +4,9 @@ import 'package:full_responsive_ui/utils/app_images.dart';
 import 'package:full_responsive_ui/utils/app_styles.dart';
 
 class CreditCard extends StatelessWidget {
+  final int cardNum ;
   const CreditCard({
-    super.key,
+    super.key, required this.cardNum,
   });
 
   @override
@@ -13,7 +14,7 @@ class CreditCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("My Card",style: AppStyles.styleSemiBold16(context),),
+        Text("Card $cardNum",style: AppStyles.styleSemiBold16(context),),
         const SizedBox(height: 5,),
         AspectRatio(
           aspectRatio: 1.9,
