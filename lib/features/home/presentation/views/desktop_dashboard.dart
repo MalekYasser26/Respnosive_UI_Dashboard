@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/all_expenses.dart';
+import 'package:full_responsive_ui/features/home/presentation/views/widgets/cards_transaction_section.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_bg_container.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_drawer.dart';
-import 'package:full_responsive_ui/features/home/presentation/views/widgets/my_cards.dart';
+import 'package:full_responsive_ui/features/home/presentation/views/widgets/income_header.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/quick_invoice.dart';
-import 'package:full_responsive_ui/features/home/presentation/views/widgets/transaction_history.dart';
 
 
 class DesktopDashboardView extends StatefulWidget {
@@ -42,28 +42,28 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
               ),
             ),
           ),
-           const Expanded(
+            const Expanded(
             flex: 900,
-              child: Column(
-                children: [
-                  CustBGContainter(
-                    childWidget: SingleChildScrollView(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    CardsTransactionSection(),
+                    SizedBox(height: 10,),
+                    CustBGContainter(childWidget: SingleChildScrollView(
                       child: Column(
-                      children: [
-                          MyCards(),
-                          Padding(
-                            padding: EdgeInsets.all(9.0),
-                            child:  Divider(
-                              thickness: .5,
-                            ),
-                          ),
-                          TransactionHistory(),
-                      ],
-            ),
-                    ),
-                  ),
+                        children: [
+                          Column(
+                            children: [
+                              IncomeHeader(),
 
-                ],
+
+                            ],
+                          )
+                        ],
+                      ),
+                    ))
+                  ],
+                ),
               ),
           ),
          
@@ -72,4 +72,5 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
     );
   }
 }
+
 
