@@ -4,6 +4,7 @@ import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_drawer.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/my_cards.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/quick_invoice.dart';
+import 'package:full_responsive_ui/features/home/presentation/views/widgets/transaction_history.dart';
 
 
 class DesktopDashboardView extends StatefulWidget {
@@ -43,15 +44,26 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
           ),
            const Expanded(
             flex: 900,
-              child: CustBGContainter(
-                childWidget: SingleChildScrollView(
-                  child: Column(
-
-                  children: [
-                      MyCards(),
-                  ],
+              child: Column(
+                children: [
+                  CustBGContainter(
+                    childWidget: SingleChildScrollView(
+                      child: Column(
+                      children: [
+                          MyCards(),
+                          Padding(
+                            padding: EdgeInsets.all(9.0),
+                            child:  Divider(
+                              thickness: .5,
+                            ),
+                          ),
+                          TransactionHistory(),
+                      ],
             ),
-                ),
+                    ),
+                  ),
+
+                ],
               ),
           ),
          
