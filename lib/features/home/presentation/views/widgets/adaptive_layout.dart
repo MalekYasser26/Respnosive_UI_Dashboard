@@ -15,6 +15,7 @@ class AdaptiveLayoutWidget extends StatelessWidget {
         return Placeholder();
       } else {
         print("desktop");
+
         return const DesktopDashboardView();
       }
     },);

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:full_responsive_ui/features/home/presentation/models/user_info_model.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_bg_container.dart';
-import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_button.dart';
-import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_text.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/latest_transaction.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/quick_invoice_form.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/quick_invoice_header.dart';
 import 'package:full_responsive_ui/utils/app_images.dart';
-import 'package:full_responsive_ui/utils/app_styles.dart';
 
 class QuickInvoice extends StatelessWidget {
   const QuickInvoice({Key? key}) : super(key: key);
