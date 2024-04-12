@@ -1,16 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:full_responsive_ui/features/home/presentation/views/widgets/all_expenses.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cards_transaction_section.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_bg_container.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_drawer.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/income_header.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/income_section.dart';
-import 'package:full_responsive_ui/features/home/presentation/views/widgets/quick_invoice.dart';
+import 'package:full_responsive_ui/features/home/presentation/views/widgets/middle_section.dart';
 
 class DesktopDashboardView extends StatefulWidget {
-  const DesktopDashboardView({Key? key}) : super(key: key);
+  const DesktopDashboardView({super.key});
 
   @override
   State<DesktopDashboardView> createState() => _DesktopDashboardViewState();
@@ -33,17 +30,7 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
             flex: 1300,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 30),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    AllExpenses(),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    QuickInvoice(),
-                  ],
-                ),
-              ),
+              child: MiddleSection(),
             ),
           ),
           const Expanded(
@@ -75,4 +62,5 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
     );
   }
 }
+
 

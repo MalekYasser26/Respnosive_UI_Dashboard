@@ -9,13 +9,13 @@ class ExpensesItem extends StatelessWidget {
   final int index;
   final Function(int) updateIndex;
 
-  ExpensesItem({
-    Key? key,
+  const ExpensesItem({
+    super.key,
     required this.eimModel,
     required this.active,
     required this.index,
     required this.updateIndex,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
