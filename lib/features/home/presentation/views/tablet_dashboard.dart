@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_drawer.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/middle_section.dart';
+import 'package:full_responsive_ui/features/home/presentation/views/widgets/right_section.dart';
 
 class TabletDashboardView extends StatelessWidget {
   const TabletDashboardView({super.key});
@@ -18,9 +19,21 @@ class TabletDashboardView extends StatelessWidget {
               child: const CustDrawer(),
             ),
           ),
-          const Expanded(flex: 2, child: MiddleSection()),
+          const Expanded(
+            flex: 2,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  MiddleSection(),
+                  SizedBox(height: 20,),
+                  RightSection(),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
 }
+

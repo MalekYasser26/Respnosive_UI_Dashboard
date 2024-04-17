@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/desktop_dashboard.dart';
+import 'package:full_responsive_ui/features/home/presentation/views/mobile_dashboard.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/tablet_dashboard.dart';
 
 class AdaptiveLayoutWidget extends StatelessWidget {
@@ -10,7 +11,7 @@ class AdaptiveLayoutWidget extends StatelessWidget {
     return LayoutBuilder(builder: (context, constraints) {
       if (constraints.maxWidth<=550){
         print("mobile");
-        return Placeholder();
+        return const MobileDashboardView();
       } else if(constraints.maxWidth<=920){
         print("tablet");
         return const TabletDashboardView();

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:full_responsive_ui/features/home/presentation/views/widgets/cards_transaction_section.dart';
-import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_bg_container.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_drawer.dart';
-import 'package:full_responsive_ui/features/home/presentation/views/widgets/income_header.dart';
-import 'package:full_responsive_ui/features/home/presentation/views/widgets/income_section.dart';
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/middle_section.dart';
+import 'package:full_responsive_ui/features/home/presentation/views/widgets/right_section.dart';
 
 class DesktopDashboardView extends StatefulWidget {
   const DesktopDashboardView({super.key});
@@ -36,25 +33,7 @@ class _DesktopDashboardViewState extends State<DesktopDashboardView> {
           const Expanded(
             flex: 900,
             child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  CardsTransactionSection(),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  CustBGContainter(
-                      childWidget: Column(
-                    children: [
-                      Column(
-                        children: [
-                          IncomeHeader(),
-                          IncomeSection(),
-                        ],
-                      )
-                    ],
-                  ))
-                ],
-              ),
+              child: RightSection(),
             ),
           ),
         ],
