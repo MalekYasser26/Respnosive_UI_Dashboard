@@ -9,16 +9,15 @@ class MiddleSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Column(
-        children: [
-          AllExpenses(),
-          SizedBox(
-            height: 10,
-          ),
-          QuickInvoice(),
-        ],
-      ),
+    return const Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        AllExpenses(),
+        SizedBox(
+          height: 10,
+        ),
+        QuickInvoice(),
+      ],
     );
   }
 }

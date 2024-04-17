@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:full_responsive_ui/utils/app_images.dart';
 import 'package:full_responsive_ui/utils/app_styles.dart';
@@ -27,10 +29,12 @@ class CreditCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ListTile(
-                  title: Text("Name Card",style: AppStyles.styleMedium14(context)),
-                  subtitle: Text("Malek Yasser",style: AppStyles.styleSemiBoldWhite16(context)),
-                  trailing: SvgPicture.asset(Assets.imagePlaceHolder),
+                Expanded(
+                  child: ListTile(
+                    title: Text("Name Card",style: AppStyles.styleMedium14(context)),
+                    subtitle: Text("Malek Yasser",style: AppStyles.styleSemiBoldWhite16(context)),
+                    trailing: SvgPicture.asset(Assets.imagePlaceHolder),
+                  ),
                 ),
                  const Spacer(),
                  Row(
@@ -48,7 +52,7 @@ class CreditCard extends StatelessWidget {
                       ),
                     )
                   ],
-                ),
+                                 ),
               ],
             ) ,
           ),

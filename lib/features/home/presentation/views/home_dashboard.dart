@@ -3,31 +3,39 @@ import 'package:full_responsive_ui/features/home/presentation/views/widgets/adap
 import 'package:full_responsive_ui/features/home/presentation/views/widgets/cust_drawer.dart';
 
 class HomeDashboardView extends StatefulWidget {
-  const HomeDashboardView({super.key});
+  const HomeDashboardView({Key? key}) : super(key: key);
 
   @override
   State<HomeDashboardView> createState() => _HomeDashboardViewState();
 }
 
 class _HomeDashboardViewState extends State<HomeDashboardView> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-
-      drawer: Container(
-          color:const Color(0xFFFFFFFF) ,
-          width: MediaQuery.of(context).size.width*0.7,
-          child: const CustDrawer()),
-      appBar: MediaQuery.of(context).size.width<=550 ? AppBar(
+    return Scaffold(
+      key: _scaffoldKey,
+      drawer: MediaQuery.of(context).size.width <= 550
+          ? Container(
+        color: const Color(0xFFFFFFFF),
+        width: MediaQuery.of(context).size.width * 0.7,
+        child: const CustDrawer(),
+      )
+          : null,
+      appBar: MediaQuery.of(context).size.width <= 550
+          ? AppBar(
         backgroundColor: const Color(0xFFFFFFFF),
-        leading: Builder(
-          builder: (context) {
-            return IconButton(onPressed: () {
-                Scaffold.of(context).openDrawer();
-            }, icon: const Icon(Icons.menu));
-          }
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () {
+            _scaffoldKey.currentState!.openDrawer();
+          },
         ),
-      ): null,
+      )
+          : null,
       body: const AdaptiveLayoutWidget(),
     );
   }
