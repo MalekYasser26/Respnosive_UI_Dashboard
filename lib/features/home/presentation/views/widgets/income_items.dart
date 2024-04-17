@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:full_responsive_ui/features/home/presentation/models/income_item_model.dart';
-import 'package:full_responsive_ui/features/home/presentation/views/widgets/income_item.dart';
 import 'package:full_responsive_ui/utils/app_styles.dart';
 
 class IncomeItems extends StatelessWidget {
